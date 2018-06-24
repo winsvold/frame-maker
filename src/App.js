@@ -1,21 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// @flow
+import React from 'react';
+import Frame from "./frame/frame";
+import styled from 'styled-components';
+import frameImg from './resources/frame/frame.png';
+import passepartoutImg from './resources/passepartout/passepartout.png'
+import type {FrameProps} from "./frame/frame";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+const testFrame: FrameProps = {
+  passepartout: {
+    width: 40,
+    image: passepartoutImg
+  },
+  secondpassepartout: {
+    width: 10
+  },
+  frame: {
+    width: 20,
+    image: frameImg
+  },
+  image: passepartoutImg
+};
+
+function App() {
+  return (
+    <Center>
+      <Frame {...testFrame} />
+    </Center>
+  );
 }
 
 export default App;
