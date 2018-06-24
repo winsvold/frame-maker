@@ -15,8 +15,7 @@ const Center = styled.div`
 
 const testFrame: FrameProps = {
   passepartout: {
-    width: 40,
-    image: passepartoutImg
+    width: 50,
   },
   secondpassepartout: {
     width: 10

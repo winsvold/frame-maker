@@ -17,6 +17,7 @@ const Style = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 1px 3px 3px rgba(0, 0, 0, 0.2);
 `;
 
 function Paper(props: Props) {

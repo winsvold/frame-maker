@@ -21,7 +21,7 @@ export type FrameDimensions = {
 
 export function getDimensions(props: FrameProps): FrameDimensions {
   const image: Dimensions2D = {
-    width: 200,
+    width: 300,
     height: 200
   };
 
