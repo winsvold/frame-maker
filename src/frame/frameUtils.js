@@ -19,10 +19,12 @@ export type FrameDimensions = {
   image: Dimensions2D;
 }
 
-export function getDimensions(props: FrameProps): FrameDimensions {
+type Props = FrameProps & {imgHeight?: number; imgWidth?:number;};
+
+export function getDimensions(props: Props): FrameDimensions {
   const image: Dimensions2D = {
-    width: 300,
-    height: 200
+    width: props.imgWidth || 0,
+    height: props.imgHeight || 0
   };
 
   const paper: Dimensions2D = {

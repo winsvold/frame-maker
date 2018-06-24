@@ -28,21 +28,31 @@ export type FrameProps = {
   secondpassepartout: FrameComonent;
   frame: FrameComonent;
   image: any;
+  imgHeight?: number;
+  imgWidth?: number;
 };
 
 class Frame extends React.Component<FrameProps,{}> {
 
+  img: HTMLImageElement | null;
+
   render(){
-    const dimensions = getDimensions(this.props);
+    const imgSize = {
+      imgHeight: this.img ? this.img.clientHeight : 0,
+      imgWidth: this.img ? this.img.clientWidth : 0
+    };
+    const props = {...this.props, ...imgSize};
+    const dimensions = getDimensions(props);
+
     return (
-      <FrameDiv width={this.props.frame.width}>
-        <Top  width={dimensions.frame.width} thickness={this.props.frame.width} img={frameImg} />
-        <Bottom width={dimensions.frame.width} thickness={this.props.frame.width} img={frameImg} />
-        <Right width={dimensions.frame.width} thickness={this.props.frame.width} height={dimensions.frame.height} img={frameImg} />
-        <Left width={dimensions.frame.width} thickness={this.props.frame.width} height={dimensions.frame.height} img={frameImg} />
-        <Passepartout frame={this.props}>
-          <Paper frame={this.props}>
-             Hei
+      <FrameDiv width={props.frame.width}>
+        <Top thickness={props.frame.width} img={frameImg} />
+        <Bottom thickness={props.frame.width} img={frameImg} />
+        <Right thickness={props.frame.width} height={dimensions.frame.height} img={frameImg} />
+        <Left thickness={props.frame.width} height={dimensions.frame.height} img={frameImg} />
+        <Passepartout frame={props}>
+          <Paper frame={props}>
+             <img onLoad={() => this.forceUpdate()} ref={ref => this.img = ref} src={props.image}/>
           </Paper>
         </Passepartout>
       </FrameDiv>

@@ -14,7 +14,6 @@ const Base = styled.div`
 `;
 
 export const Top = styled(Base)`
-  height: ${props => props.thickness + 1}px;
   left: 0;
   top: 0;
   right: 0;

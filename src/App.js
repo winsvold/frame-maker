@@ -3,8 +3,8 @@ import React from 'react';
 import Frame from "./frame/frame";
 import styled from 'styled-components';
 import frameImg from './resources/frame/frame.png';
-import passepartoutImg from './resources/passepartout/passepartout.png'
 import type {FrameProps} from "./frame/frame";
+import samplePic from './resources/samplepic/grumpy.jpg';
 
 const Center = styled.div`
   display: flex;
@@ -18,13 +18,13 @@ const testFrame: FrameProps = {
     width: 50,
   },
   secondpassepartout: {
-    width: 10
+    width: 5
   },
   frame: {
     width: 20,
     image: frameImg
   },
-  image: passepartoutImg
+  image: samplePic
 };
 
 function App() {

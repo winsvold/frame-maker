@@ -35,8 +35,8 @@ function Passepartout(props: Props) {
   return (
     <Style {...props.frame.passepartout}>
 
-      <Top width={dimensions.passepartout.width} thickness={props.frame.passepartout.width} img={passepartoutImg} />
-      <Bottom width={dimensions.passepartout.width} thickness={props.frame.passepartout.width} img={passepartoutImg} />
+      <Top thickness={props.frame.passepartout.width} img={passepartoutImg} />
+      <Bottom thickness={props.frame.passepartout.width} img={passepartoutImg} />
       <Left height={dimensions.passepartout.height} thickness={props.frame.passepartout.width} img={passepartoutImg} />
       <Right height={dimensions.passepartout.height} thickness={props.frame.passepartout.width} img={passepartoutImg} />
 
