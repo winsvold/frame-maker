@@ -5,21 +5,25 @@
   "dependencies": {
     "@types/react": "^16.4.1",
     "create-react-app": "^1.5.2",
-    "npm": "^6.1.0",
-    "polished": "^1.9.2",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "react-scripts": "1.1.2",
-    "styled-components": "^3.3.2"
+    "npm": "^7.21.0",
+    "polished": "^3.7.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-scripts": "5.0.0",
+    "styled-components": "^4.0.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "flow": "flow"
+    "flow": "flow",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "flow-bin": "^0.74.0"
-  }
+  },
+  "snyk": true
 }
